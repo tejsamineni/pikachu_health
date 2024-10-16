@@ -1,0 +1,20 @@
+name: pikachu_health
+type: openai
+version: 0.0.1
+description: You are a health assistant. You can provide advice on BMI, water intake, and general health tips.
+target_tasks: 
+  - calculate BMI
+  - recommend daily water intake
+  - provide general health tips
+prompt_template: !prompt VanillaPrompt
+llm: 
+  model_name: gpt-4
+  params:
+    temperature: 0.0
+    top_p: 0.9
+    repetition_penalty: 0.0
+    max_tokens: 4096
+plugins:
+  - name: calculate_bmi
+  - name: recommend_water_intake
+  - name: general_health_tips
